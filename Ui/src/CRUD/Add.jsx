@@ -7,7 +7,8 @@ function Add() {
   const [price, setPrice] = useState("");
   const [image_url, setImage_url] = useState(null);
   const [category, setCategory] = useState("");
-
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -22,11 +23,6 @@ function Add() {
         body: formData,
       });
 
-      /*   for (let i = 0; i < document.querySelectorAll("input").length; i++) {
-        document.querySelectorAll("input")[i].value = "";
-      }
-      document.getElementById("file").value = null; */
-
       const data = await res.json();
       console.log(data);
 
@@ -36,6 +32,7 @@ function Add() {
         setPrice("");
         setImage_url(null);
         setCategory("");
+        setPreviewImage(URL.createObjectURL(files[0]));
       } else {
         alert("Failed to add product.");
       }
@@ -53,10 +50,7 @@ function Add() {
         encType="multipart/form-data"
       >
         <div>
-          <label
-            htmlFor="name"
-            className="block text-md -medium text-gray-700"
-          >
+          <label htmlFor="name" className="block text-md -medium text-gray-700">
             ឈ្មោះផលិតផល
           </label>
           <input
@@ -66,7 +60,7 @@ function Add() {
             onChange={(e) => setName(e.target.value)}
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50 p-4"
             required
-          />    
+          />
         </div>
 
         <div>
@@ -74,7 +68,6 @@ function Add() {
             htmlFor="file"
             className="block text-md font-medium text-gray-700"
           >
-            
             រូបភាព
           </label>
           <input
@@ -132,7 +125,6 @@ function Add() {
           បន្ថែម
         </button>
       </form>
-      
     </div>
   );
 }

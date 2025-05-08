@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import '../App.css';
 function Update() {
   const [formData, setFormData] = useState({
     id: "",
@@ -13,7 +13,7 @@ function Update() {
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "image") {
-      setFormData((prev) => ({
+      setFormData((prev) => ({ 
         ...prev,
         [name]: files[0],
       }));
@@ -65,7 +65,7 @@ function Update() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-10 bg-white rounded-lg shadow-md z-100">
+    <div className="max-w-md mx-auto mt-10 p-10 bg-white rounded-lg shadow-md update">
       <h1 className="text-3xl text-black font-bold mb-6">
         ធ្វើផលិតផលបច្ចុប្បន្ន
       </h1>

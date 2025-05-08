@@ -42,7 +42,7 @@ const ProductCard = ({ product, onDelete }) => {
             កែប្រែ
           </button>
           <div
-            className={`absolute transition-all left-1/2 top-1/2 -translate-1/2  ${
+            className={`absolute transition-all left-1/2 top-1/2 -translate-1/2 z-100 ${
               isEditShow ? "visible opacity-100 scale-100" : "invisible opacity-0 scale-0"
             }`}
           >

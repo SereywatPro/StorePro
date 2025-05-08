@@ -5,3 +5,7 @@
     background-color: rgba(0, 0, 0, 0.356);
     z-index: 10;
 }
+
+.update{
+    z-index: 99;
+}
