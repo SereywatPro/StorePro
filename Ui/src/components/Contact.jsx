@@ -13,7 +13,7 @@ function Contact() {
             action="Post"
             className="space-x-3 space-y-5 border border-gray-200 shadow-lg rounded-sm py-20 px-5"
           >
-            <h2 className="text-2xl font-bold">Contact Us</h2>
+            <h2 className="text-2xl font-bold">ទំនាក់ទំនងពួកយើង</h2>
             <section className="space-x-8">
               <label htmlFor="email">អ៊ីម៉ែល:</label>
               <input

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../App.css";
-import Footer from "../components/Footer";
 
 function Add() {
   const [name, setName] = useState("");

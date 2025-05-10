@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import '../App.css';
+import "../App.css";
+
 function Update() {
   const [formData, setFormData] = useState({
     id: "",
@@ -13,7 +14,7 @@ function Update() {
   const handleInputChange = (e) => {
     const { name, value, files } = e.target;
     if (name === "image") {
-      setFormData((prev) => ({ 
+      setFormData((prev) => ({
         ...prev,
         [name]: files[0],
       }));
@@ -26,7 +27,6 @@ function Update() {
       }));
     }
   };
-
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -48,14 +48,13 @@ function Update() {
 
       const data = await response.json();
 
-        for (let i = 0; i < document.querySelectorAll("input").length; i++) {
+      for (let i = 0; i < document.querySelectorAll("input").length; i++) {
         document.querySelectorAll("input")[i].value = "";
       }
       document.getElementById("file").value = null;
 
       if (data.success) {
-        alert("Product updated successfully!");
-
+        alert("ធ្វើផលិតផលបច្ចុប្បន្នបានជោគជ័យ");
       } else {
         throw new Error(data.message || "Failed to update product");
       }
@@ -65,16 +64,16 @@ function Update() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-10 bg-white rounded-lg shadow-md update">
-      <h1 className="text-3xl text-black font-bold mb-6">
+    <div className="w-full max-w-md mx-auto mt-4 sm:mt-10 p-4 sm:p-10 bg-white rounded-lg shadow-md update">
+      <h1 className="text-2xl sm:text-3xl text-black font-bold mb-4 sm:mb-6 text-center">
         ធ្វើផលិតផលបច្ចុប្បន្ន
       </h1>
 
       <form onSubmit={handleUpdate} className="space-y-4" action="POST">
-        <section className="flex items-center space-x-[1.6rem]">
+        <section className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <label
             htmlFor="id"
-            className="block text-md font-medium text-gray-700"
+            className="block text-md font-medium text-gray-700 w-full sm:w-1/3"
           >
             លេខសម្គាល់
           </label>
@@ -85,14 +84,14 @@ function Update() {
             value={formData.id}
             onChange={handleInputChange}
             required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm cursor-pointer p-5 focus:ring"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 sm:p-5 focus:ring"
           />
         </section>
 
-        <section className="flex items-center space-x-[1.6rem]">
+        <section className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <label
             htmlFor="name"
-            className="block text-md font-medium text-gray-700"
+            className="block text-md font-medium text-gray-700 w-full sm:w-1/3"
           >
             ឈ្មោះ
           </label>
@@ -103,22 +102,24 @@ function Update() {
             value={formData.name}
             onChange={handleInputChange}
             required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm cursor-pointer p-5 focus:ring"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 sm:p-5 focus:ring"
           />
         </section>
 
         {previewImage && (
-          <img
-            src={previewImage}
-            className="w-40 mx-auto rounded-sm"
-            alt="Preview"
-          />
+          <div className="flex justify-center">
+            <img
+              src={previewImage}
+              className="w-32 sm:w-40 mx-auto rounded-sm"
+              alt="Preview"
+            />
+          </div>
         )}
 
-        <section className="flex items-center space-x-3">
+        <section className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <label
             htmlFor="image"
-            className="block text-md font-medium text-gray-700 text-nowrap"
+            className="block text-md font-medium text-gray-700 w-full sm:w-1/3"
           >
             រូបភាព
           </label>
@@ -127,14 +128,14 @@ function Update() {
             id="image"
             name="image"
             onChange={handleInputChange}
-            className="mt-1 block w-[19.2rem] rounded-md border-gray-300 shadow-sm cursor-pointer p-5 focus:ring"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 sm:p-5 focus:ring"
           />
         </section>
 
-        <section className="flex items-center space-x-3">
+        <section className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <label
             htmlFor="category"
-            className="block text-md font-medium text-gray-700"
+            className="block text-md font-medium text-gray-700 w-full sm:w-1/3"
           >
             ប្រភេទ
           </label>
@@ -145,14 +146,14 @@ function Update() {
             value={formData.category}
             onChange={handleInputChange}
             required
-            className="mt-1 block w-100 rounded-md border-gray-300 shadow-sm cursor-pointer p-5 focus:ring"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 sm:p-5 focus:ring"
           />
         </section>
 
-        <section className="flex items-center space-x-7">
+        <section className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
           <label
             htmlFor="price"
-            className="block text-md font-medium text-gray-700"
+            className="block text-md font-medium text-gray-700 w-full sm:w-1/3"
           >
             តម្លៃ
           </label>
@@ -164,14 +165,14 @@ function Update() {
             onChange={handleInputChange}
             min="1"
             required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm cursor-pointer p-5 focus:ring"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 sm:p-5 focus:ring"
           />
         </section>
 
-        <section className="mt-5">
+        <section className="mt-6 flex justify-center">
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600 transition duration-200"
+            className="w-full sm:w-auto bg-blue-500 text-white px-6 py-2 rounded cursor-pointer hover:bg-blue-600 transition duration-200"
           >
             កែប្រែ
           </button>

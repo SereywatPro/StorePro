@@ -18,7 +18,7 @@ import React, { useEffect, useState } from 'react'
       const result = await res.json();
 
       if (result.success) {
-        alert("Deleted successfully");
+        alert("លុបទិន្នន័យបានជោកជ័យ");
         if (onDelete) onDelete(productId); // Notify parent to remove item from UI
       } else {
         console.log("Delete failed: " + result.message);
