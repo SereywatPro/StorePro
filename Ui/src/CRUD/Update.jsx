@@ -41,10 +41,13 @@ function Update() {
         formDataToSend.append("image", formData.image);
       }
 
-      const response = await fetch("http://localhost/php-api/SERVER/updatePro.php", {
-        method: "POST",
-        body: formDataToSend,
-      });
+      const response = await fetch(
+        "http://serverpro-product.up.railway.app/updatePro.php",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
       const data = await response.json();
 

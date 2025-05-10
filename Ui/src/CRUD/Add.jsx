@@ -17,10 +17,13 @@ function Add() {
     formData.append("image", image_url);
 
     try {
-      const res = await fetch("http://localhost/php-api/SERVER/create_product.php", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "http://serverpro-product.up.railway.app/create_product.php",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const data = await res.json();
       console.log(data);
