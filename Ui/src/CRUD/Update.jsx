@@ -41,7 +41,7 @@ function Update() {
         formDataToSend.append("image", formData.image);
       }
 
-      const response = await fetch("http://localhost/php-api/updatePro.php", {
+      const response = await fetch("http://localhost/php-api/SERVER/updatePro.php", {
         method: "POST",
         body: formDataToSend,
       });

@@ -17,7 +17,7 @@ function Add() {
     formData.append("image", image_url);
 
     try {
-      const res = await fetch("http://localhost/php-api/create_product.php", {
+      const res = await fetch("http://localhost/php-api/SERVER/create_product.php", {
         method: "POST",
         body: formData,
       });

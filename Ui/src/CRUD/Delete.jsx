@@ -10,7 +10,7 @@ import React, { useEffect, useState } from 'react'
     formData.append("id", productId);
 
     try {
-      const res = await fetch("http://localhost/php-api/deletePro.php", {
+      const res = await fetch("http://localhost/php-api/SERVER/deletePro.php", {
         method: "POST",
         body: formData,
       });

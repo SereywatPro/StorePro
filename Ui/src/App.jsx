@@ -14,7 +14,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost/php-api/get_products.php")
+    fetch(`${import.meta.env.VITE_API_URL}/get_products.php`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error fetching products:", err));
