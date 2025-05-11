@@ -8,10 +8,10 @@ function App() {
   const [isShow, setIsShow] = useState(false);
   const handleAdd = () => {
     return !isShow ? setIsShow(true) : setIsShow(false);
-  }
+  };
   const handleRefresh = () => {
     return location.reload();
-  }
+  };
 
   useEffect(() => {
     fetch(`https://serverpro-product.up.railway.app/get_products.php`)
@@ -55,7 +55,12 @@ function App() {
               </div>
             )}
             {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id}>
+                <img
+                  src={`https://serverpro-product.up.railway.app/uploads/${product.image_url}`}
+                  alt={product.name}
+                />
+              </ProductCard>
             ))}
             <section className="block ">
               <section
