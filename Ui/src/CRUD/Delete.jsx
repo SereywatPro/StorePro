@@ -22,7 +22,7 @@ function Delete({ productId, onDelete }) {
         alert("លុបទិន្នន័យបានជោកជ័យ");
         if (onDelete) onDelete(productId); // Notify parent to remove item from UI
       } else {
-        console.log("Delete failed: " + result.message);
+        console.log("លុបទិន្នន័យបរាជ័យ: " + result.message);
       }
     } catch (error) {
       alert("Error deleting product");

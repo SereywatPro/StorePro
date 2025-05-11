@@ -40,7 +40,7 @@ function Add({ onProductAdded }) {
         setCategory("");
         if (onProductAdded) onProductAdded();
       } else {
-        alert("បញ្ជូលផលិតផលមិនបានជៅគជ័យ.");
+        alert("បញ្ជូលផលិតផលបរាជ័យ.");
       }
     } catch (err) {
       console.error("Error uploading product😔:", err);
