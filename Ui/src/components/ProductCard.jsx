@@ -7,8 +7,6 @@ const ProductCard = ({ product, onDelete }) => {
   function handleEditShow() {
     return !isEditShow ? setIsEditShow(true) : setIsEditShow(false);
   }
-  
-
 
   return (
     <>
