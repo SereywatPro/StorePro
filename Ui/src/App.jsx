@@ -14,7 +14,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`http://serverpro-product.up.railway.app/get_products.php`)
+    fetch(`https://serverpro-product.up.railway.app/get_products.php`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error fetching products:", err));

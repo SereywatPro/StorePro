@@ -18,7 +18,7 @@ function Add() {
 
     try {
       const res = await fetch(
-        "http://serverpro-product.up.railway.app/create_product.php",
+        "https://serverpro-product.up.railway.app/create_product.php",
         {
           method: "POST",
           body: formData,

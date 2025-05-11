@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
+const API_BASE_URL = "https://serverpro-product.up.railway.app";
 
- function Delete({ productId, onDelete }) {
+function Delete({ productId, onDelete }) {
   const handleClick = async () => {
     const confirmDelete = window.confirm("តើអ្នកពិតជាចង់លុបផលិតផលនេះមែនឬទេ?");
     if (!confirmDelete) return;
@@ -10,13 +11,10 @@ import React, { useEffect, useState } from 'react'
     formData.append("id", productId);
 
     try {
-      const res = await fetch(
-        "http://serverpro-product.up.railway.app/deletePro.php",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const res = await fetch(API_BASE_URL + "/deletePro.php", {
+        method: "POST",
+        body: formData,
+      });
 
       const result = await res.json();
 
@@ -31,14 +29,16 @@ import React, { useEffect, useState } from 'react'
     }
   };
 
-
   return (
     <div>
-       <button onClick={handleClick} className="bg-red-500 text-white px-4 py-2 text-nowrap rounded cursor-pointer hover:bg-red-600 transition duration-200">
-              លុប
-        </button>
+      <button
+        onClick={handleClick}
+        className="bg-red-500 text-white px-4 py-2 text-nowrap rounded cursor-pointer hover:bg-red-600 transition duration-200"
+      >
+        លុប
+      </button>
     </div>
-  )
+  );
 }
 
-export default Delete
+export default Delete;

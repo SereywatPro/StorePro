@@ -42,7 +42,7 @@ function Update() {
       }
 
       const response = await fetch(
-        "http://serverpro-product.up.railway.app/updatePro.php",
+        "https://serverpro-product.up.railway.app/updatePro.php",
         {
           method: "POST",
           body: formDataToSend,
