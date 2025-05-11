@@ -55,11 +55,15 @@ function App() {
               </div>
             )}
             {products.map((product) =>
-              product && product.image_url ? (
+              product ? (
                 <ProductCard key={product.id}>
                   <img
-                    src={`https://serverpro-product.up.railway.app/uploads/${product.image_url}`}
-                    alt={product.name}
+                    src={
+                      product.image_url
+                        ? `https://serverpro-product.up.railway.app/uploads/${product.image_url}`
+                        : "https://via.placeholder.com/150"
+                    }
+                    alt={product.name || "No name"}
                   />
                 </ProductCard>
               ) : null
