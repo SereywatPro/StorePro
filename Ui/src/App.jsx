@@ -54,14 +54,16 @@ function App() {
                 <p className="text-gray-500">Loading products...</p>
               </div>
             )}
-            {products.map((product) => (
-              <ProductCard key={product.id}>
-                <img
-                  src={`https://serverpro-product.up.railway.app/uploads/${product.image_url}`}
-                  alt={product.name}
-                />
-              </ProductCard>
-            ))}
+            {products.map((product) =>
+              product && product.image_url ? (
+                <ProductCard key={product.id}>
+                  <img
+                    src={`https://serverpro-product.up.railway.app/uploads/${product.image_url}`}
+                    alt={product.name}
+                  />
+                </ProductCard>
+              ) : null
+            )}
             <section className="block ">
               <section
                 className={`fixed z-100 left-[50%]  top-[50%] -translate-x-[50%] -translate-y-1/2 transition-all
