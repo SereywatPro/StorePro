@@ -39,7 +39,7 @@ function Add() {
         alert("Failed to add product.");
       }
     } catch (err) {
-      console.error("Error uploading product:", err);
+      console.error("Error uploading product😔:", err);
     }
   };
 
