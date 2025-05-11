@@ -8,10 +8,10 @@ function App() {
   const [isShow, setIsShow] = useState(false);
   const handleAdd = () => {
     return !isShow ? setIsShow(true) : setIsShow(false);
-  }
+  };
   const handleRefresh = () => {
     return location.reload();
-  }
+  };
 
   useEffect(() => {
     fetch(`https://serverpro-product.up.railway.app/get_products.php`)
