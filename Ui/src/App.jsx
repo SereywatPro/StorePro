@@ -8,13 +8,13 @@ function App() {
   const [isShow, setIsShow] = useState(false);
   const handleAdd = () => {
     return !isShow ? setIsShow(true) : setIsShow(false);
-  };
+  }
   const handleRefresh = () => {
     return location.reload();
-  };
+  }
 
   useEffect(() => {
-    fetch(`https://serverpro-product.up.railway.app/get_products.php`)
+    fetch(`http://serverpro-product.up.railway.app/get_products.php`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error fetching products:", err));
@@ -54,20 +54,9 @@ function App() {
                 <p className="text-gray-500">Loading products...</p>
               </div>
             )}
-            {products.map((product) =>
-              product ? (
-                <ProductCard key={product.id}>
-                  <img
-                    src={
-                      product.image_url
-                        ? `https://serverpro-product.up.railway.app/uploads/${product.image_url}`
-                        : "https://via.placeholder.com/150"
-                    }
-                    alt={product.name || "No name"}
-                  />
-                </ProductCard>
-              ) : null
-            )}
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
             <section className="block ">
               <section
                 className={`fixed z-100 left-[50%]  top-[50%] -translate-x-[50%] -translate-y-1/2 transition-all

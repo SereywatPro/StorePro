@@ -19,7 +19,7 @@ const ProductCard = ({ product, onDelete }) => {
       <div className="border rounded-lg px-5 py-4 shadow-md ">
         {product.image_url ? (
           <img 
-            src={`http://localhost/php-api/${product.image_url}`}
+            src={`https://serverpro-product.up.railway.app/uploads/${product.image_url}`}
             alt={product.name}
             className="w-100 h-45 object-contain"
           />
