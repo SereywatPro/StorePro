@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "../App.css";
 
-function Add() {
+function Add({ onProductAdded }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image_url, setImage_url] = useState(null);
   const [category, setCategory] = useState("");
-  
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -34,7 +33,7 @@ function Add() {
         setPrice("");
         setImage_url(null);
         setCategory("");
-        setPreviewImage(URL.createObjectURL(files[0]));
+        if (onProductAdded) onProductAdded();
       } else {
         alert("Failed to add product.");
       }

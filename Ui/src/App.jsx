@@ -63,7 +63,7 @@ function App() {
           ${isShow ? "visible scale-100" : "invisible scale-0"}
           `}
               >
-                <Add />
+                <Add onProductAdded={handleRefresh} />
                 <button
                   onClick={() => setIsShow(false)}
                   type="button"
