@@ -14,8 +14,6 @@ function Add({ onProductAdded }) {
       alert("Please fill in all fields and select an image.");
       return;
     }
-
-
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", price);
@@ -35,14 +33,14 @@ function Add({ onProductAdded }) {
       console.log(data);
 
       if (data.success) {
-        alert("Product added!");
+        alert("បញ្ជូលផលិតផលបានជោគជ័យ!");
         setName("");
         setPrice("");
         setImage_url(null);
         setCategory("");
         if (onProductAdded) onProductAdded();
       } else {
-        alert("Failed to add product.");
+        alert("បញ្ជូលផលិតផលមិនបានជៅគជ័យ.");
       }
     } catch (err) {
       console.error("Error uploading product😔:", err);

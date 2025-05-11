@@ -7,7 +7,7 @@ const ProductCard = ({ product, onDelete }) => {
   function handleEditShow() {
     return !isEditShow ? setIsEditShow(true) : setIsEditShow(false);
   }
-
+  
   return (
     <>
       <div className={`fixed transition-all w-full top-0 left-0 h-full bg-black opacity-20
