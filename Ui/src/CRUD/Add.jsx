@@ -9,6 +9,13 @@ function Add({ onProductAdded }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name || !price || !category || !image_url) {
+      alert("Please fill in all fields and select an image.");
+      return;
+    }
+
+
     const formData = new FormData();
     formData.append("name", name);
     formData.append("price", price);
