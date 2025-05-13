@@ -27,16 +27,14 @@ function About() {
         <section className="mx-4 sm:mx-6 md:mx-10 my-6 sm:my-8 md:my-10 bg-gradient-to-r from-zinc-900 to-gray-300 p-4 sm:p-8 md:p-12 lg:p-20 rounded-3xl shadow-md">
           <section className="flex flex-col justify-center items-center text-white space-y-4 sm:space-y-6">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-              សូមស្វាគមន៍មកកាន់កម្មវិធីរបស់ខ្ញុំ
+              សូមស្វាគមន៍
             </h2>
 
             <p className="text-sm sm:text-base md:text-lg text-center max-w-3xl">
               ជំរាបសួរ! ខ្ញុំបាទឈ្មោះ កែវ សេរីវឌ្ឍ ជានិស្សិតឆ្នាំទី ៣ នៅ RUPP
-              (ថ្នាក់ M1) ។ ខ្ញុំជាស្ថាបនិកគេហទំព័រនេះ។
-              គេហទំព័រនេះនិយាយអំពីផលិតផលស្តុកទុកសម្រាប់លក់ ហើយអ្នកអាចលុប
+              (ថ្នាក់ M1) ។ គេហទំព័រនេះនិយាយអំពីផលិតផលស្តុកទុកសម្រាប់លក់ ហើយអ្នកអាចលុប
               ឬធ្វើបច្ចុប្បន្នភាពពួកវាដូចជាផ្ទាំងគ្រប់គ្រង។ លើសពីនេះទៅទៀត
-              គេហទំព័ររបស់ខ្ញុំអាចការបញ្ជូលស្ទើរតែគ្រប់ផលិតផលទាំងក្នុងប្រទេសនឹងក្រៅប្រទេស
-              លើកលែងតែផលិតផលខុសច្បាប់។
+              គេហទំព័ររបស់នេះអាចមានការបញ្ជូលគ្រប់ផលិតផល។
             </p>
           </section>
         </section>
